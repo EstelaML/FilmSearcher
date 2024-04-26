@@ -1,0 +1,124 @@
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('https://wallpapers.com/images/hd/movie-poster-background-p5qblffj7cvswl5g.jpg');
+  background-size: cover;
+  filter: blur(5px);
+}
+
+.data-film{
+  text-align: left;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.main {
+  background-color: white;
+  text-align: center;
+  width: 60%; 
+  height: 80vh;
+  margin: 3% auto;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.title {
+  font-size: 4vw;
+  font-family: 'Bebas Neue', serif;
+  color: brown;
+}
+
+.plot {
+  overflow-y: auto;
+  max-height: 150px;
+  min-width: 0px;
+}
+
+.results {
+  overflow-y: auto;
+  height: 60vh;
+}
+
+p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.input-search {
+  width: 82%; 
+  height: 2.5rem;
+  padding: 0.75rem 1rem; 
+  font-size: 1rem; 
+  color: #333; 
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  background-color: #f7f7f7; 
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.delete-search {
+  width: 15%;
+  height: 2.5rem;
+  margin: 0.75rem 1rem; 
+  font-size: 0.8vw; 
+  background-color: dimgrey;
+  color: white;
+  border-radius: 5px;
+  border-color: transparent; 
+}
+
+.input-search:focus {
+  outline: none; 
+  border-color: #4a90e2; 
+  box-shadow: 0 0 0 0.1rem rgba(74, 144, 226, 0.25); 
+}
+
+.film-details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+}
+
+.details-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.inf-data {
+  text-align: left;
+  margin-left: 5vh;
+}
+
+.imgPoster {
+  width: 13vw;
+  height: auto;
+}
+
+.items-stretch{
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.film-ticket {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.2rem; 
+  margin-bottom: 0.2rem; 
+}
+
+.plot {
+  grid-column: 1 / -1;
+  text-align: left;
+}
+.film-title {
+  cursor: pointer; 
+  text-align: left;
+}

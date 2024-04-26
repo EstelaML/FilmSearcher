@@ -1,0 +1,34 @@
+<div class="bg-image"></div>
+
+<div class="main flex items-center justify-center h-screen">
+  <form class="w-full max-w-md mt-5 mb-5">
+    <label for="default-search" class="title">Search your favourite films</label>
+    <div class="relative flex items-stretch">
+      <input type="search" id="default-search" class="input-search" (input)="search($event)" placeholder="Search..."
+        required>
+      <button class="delete-search" (click)="clearSearch()">Delete search</button>
+    </div>
+  </form>
+  <div class="grid grid-cols-4 gap-4 results">
+    <div class="p-4 rounded-lg shadow-md film-ticket" *ngFor="let film of films$ | async; let i = index">
+      <p class="film-title" (click)="toggleDetails(i, film.imdbID)">{{ film.Title }}</p>
+      <div class="film-details p-4 border-t border-gray-300" *ngIf="showDetailsArray[i] && selectedFilm">
+        <div class="details-content">
+          <img [src]="film.Poster" alt="{{ film.Title }} Poster" class="mb-2 imgPoster">
+          <div class="inf-data">
+            <p><strong>Title:</strong> {{ selectedFilm.Title }}</p>
+            <p><strong>Date:</strong> {{ selectedFilm.Released }}</p>
+            <p><strong>Language:</strong> {{ selectedFilm.Language }}</p>
+            <p><strong>Director:</strong> {{ selectedFilm.Director }}</p>
+            <p><strong>Actors:</strong> {{ selectedFilm.Actors }}</p>
+            <p><strong>Rating IMDB:</strong> {{ selectedFilm.imdbRating }}</p>
+            <p><strong>Awards:</strong> {{ selectedFilm.Awards }}</p>
+          </div>
+        </div>
+        <div class="plot">
+          <p><strong>Plot:</strong> {{ selectedFilm.Plot }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
